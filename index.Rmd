@@ -1,0 +1,61 @@
+---
+title: "Presentation Ninja"
+subtitle: "⚔<br/>with xaringan"
+author: "Yihui Xie"
+institute: "RStudio, PBC"
+date: "2016/12/12 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r, lib, echo=F, message=F, warning=FALSE}
+
+library(tidyverse)
+library(ds4ling)
+library(untidydata)
+library(plot3D)
+library(patchwork)
+```
+
+```{r}
+glimpse(language_diversity)
+
+ld <- language_diversity %>% 
+  filter(., Continent == "Africa") %>% 
+  pivot_wider(names_from = "Measurement", values_from = "Value")
+
+head(ld)
+```
+---
+# A Plot
+
+.pull-left[
+```{r, fig.height=5, fig.width=12, echo = F, message = F, fig.retina=2 }
+p1 <- ld %>% 
+ggplot(., aes(x = Population, y = Langs, color = Area, label = Country)) +
+  geom_text() + 
+  geom_smooth(method = lm) +
+    labs(title = "HI", subtitle = "hello", x = "Pop.", y = "# of langs", caption = "a caption") +
+  theme_minimal(base_size = 20, base_family = "Times")
+p1
+```
+]
+
+.pull-left[
+```{r, fig.height=5, fig.width=12, echo = F, message = F, fig.retina=2 }
+p2 <- ld %>% 
+ggplot(., aes(x = Population, y = Langs, color = Area, label = Country)) +
+  geom_text() + 
+  geom_smooth(method = lm) +
+    labs(title = "HI", subtitle = "hello", x = "Pop.", y = "# of langs", caption = "a caption") +
+  theme_minimal(base_size = 20, base_family = "Times")
+```
+]
+
+---
+p1 / p2
