@@ -60,31 +60,20 @@ head(ld)
 # A Plot
 
 .pull-left[
-
-```r
-p1 &lt;- ld %&gt;% 
-ggplot(., aes(x = Population, y = Langs, color = Area, label = Country)) +
-  geom_text() + 
-  geom_smooth(method = lm) +
-    labs(title = "HI", subtitle = "hello", x = "Pop.", y = "# of langs", caption = "a caption") +
-  theme_minimal(base_size = 20, base_family = "Times")
-```
+&lt;img src="index_files/figure-html/unnamed-chunk-2-1.png" width="576" /&gt;
 ]
 
 .pull-left[
-
-```r
-p2 &lt;- ld %&gt;% 
-ggplot(., aes(x = Population, y = Langs, color = Area, label = Country)) +
-  geom_text() + 
-  geom_smooth(method = lm) +
-    labs(title = "HI", subtitle = "hello", x = "Pop.", y = "# of langs", caption = "a caption") +
-  theme_minimal(base_size = 20, base_family = "Times")
-```
+&lt;img src="index_files/figure-html/unnamed-chunk-3-1.png" width="576" /&gt;
 ]
 
 ---
-p1 / p2
+![](index_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+- A
+--
+
+- B
+--
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

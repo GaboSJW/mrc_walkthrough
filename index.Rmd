@@ -35,7 +35,7 @@ head(ld)
 # A Plot
 
 .pull-left[
-```{r, fig.height=5, fig.width=12, echo = F, message = F, fig.retina=2 }
+```{r, fig.height=5, fig.width=8, echo = F, message = F, fig.retina=2 }
 p1 <- ld %>% 
 ggplot(., aes(x = Population, y = Langs, color = Area, label = Country)) +
   geom_text() + 
@@ -47,15 +47,24 @@ p1
 ]
 
 .pull-left[
-```{r, fig.height=5, fig.width=12, echo = F, message = F, fig.retina=2 }
+```{r, fig.height=5, fig.width=8, echo = F, message = F, fig.retina=2 }
 p2 <- ld %>% 
 ggplot(., aes(x = Population, y = Langs, color = Area, label = Country)) +
   geom_text() + 
   geom_smooth(method = lm) +
     labs(title = "HI", subtitle = "hello", x = "Pop.", y = "# of langs", caption = "a caption") +
   theme_minimal(base_size = 20, base_family = "Times")
+p2
 ```
 ]
 
 ---
+```{r, echo = F, message = F}
 p1 / p2
+```
+- A
+--
+-a
+
+- B
+--
